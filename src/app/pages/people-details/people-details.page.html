@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start" defaultHref="/tabs/(people:people)">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ people?.name }}</ion-name>
+    <ion-buttons slot="end">
+      <ion-button (click)="unfavoritePeople()" *ngIf="isFavorite">
+        <ion-icon name="star" slot="icon-only" color="secondary"></ion-icon>
+      </ion-button>
+      <ion-button (click)="favoritePeople()" *ngIf="!isFavorite">
+        <ion-icon name="star-outline" slot="icon-only" color="secondary"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content padding="">
+ 
+  <ion-name *ngIf="people" class="name">
+    <ion-name-header>Episode {{ people.name_id }}: {{ people.age }}</ion-name-header>
+    <ion-name-content>
+      {{ people.opening_crawl }}
+    </ion-name-content>
+
+    <ion-card *ngIf="people" class="age">
+      <ion-card-header>Episode {{ people.name_id }}: {{ people.age }}</ion-card-header>
+      <ion-card-content>
+        {{ people.opening_crawl }}
+      </ion-card-content>
+ 
+    
+ 
+</ion-content>
